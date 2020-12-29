@@ -1,25 +1,19 @@
 package com.example.sailingapp.ui.main
 
-import android.R.attr.*
-import android.R.attr.progress
-import android.graphics.Matrix
+import android.app.DatePickerDialog
+import android.app.TimePickerDialog
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.text.format.DateFormat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AnimationUtils
 import android.view.animation.AnimationUtils.loadAnimation
-import android.widget.ImageView
-import androidx.core.content.ContextCompat
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
-import android.app.DatePickerDialog
-import android.app.TimePickerDialog
-import android.text.format.DateFormat
 import android.widget.DatePicker
 import android.widget.TimePicker
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.example.sailingapp.R
 import kotlinx.android.synthetic.main.main_fragment.*
 import java.text.SimpleDateFormat
@@ -50,7 +44,7 @@ class MainFragment : Fragment(), DatePickerDialog.OnDateSetListener,
 
     private fun initViews() {
         setSelectedDateTime()
-        datePicker.setOnClickListener { displayDatePicker() }
+        editDatePen.setOnClickListener { displayDatePicker() }
         submitButton.setOnClickListener {  }
         slushButton.setOnClickListener { showSlush() }
     }
