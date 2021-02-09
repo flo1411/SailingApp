@@ -1,107 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView
-    android:layout_height="wrap_content"
-    android:layout_width="match_parent"
+<layout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <data>
+        <variable name="user" type="com.example.sailingapp.models.User"/>
+    </data>
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guidelineStart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="10dp"/>
+    <ScrollView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guidelineEnd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_end="10dp"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/startLocation"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:hint="Startort"
-            android:layout_marginTop="10dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
-            app:layout_constraintStart_toStartOf="@id/guidelineStart" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="10dp"/>
 
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/endLocation"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:hint="Zielort"
-            app:layout_constraintTop_toBottomOf="@+id/startLocation"
-            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
-            app:layout_constraintStart_toStartOf="@id/guidelineStart" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="10dp"/>
 
-        <TextView
-            android:id="@+id/datePicker"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="@id/editDatePen"
-            app:layout_constraintEnd_toStartOf="@id/editDatePen"
-            app:layout_constraintStart_toStartOf="@id/guidelineStart"
-            app:layout_constraintBottom_toBottomOf="@id/editDatePen"/>
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/startLocation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Startort"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart" />
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/editDatePen"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/ic_edit_pen"
-            app:layout_constraintTop_toBottomOf="@id/endLocation"
-            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
-            app:layout_constraintBottom_toTopOf="@id/submitButton"/>
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/endLocation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Zielort"
+                app:layout_constraintTop_toBottomOf="@+id/startLocation"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/submitButton"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="40dp"
-            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
-            app:layout_constraintStart_toStartOf="@id/guidelineStart"
-            app:layout_constraintTop_toBottomOf="@id/editDatePen"
-            app:layout_constraintBottom_toTopOf="@id/slushButton"
-            android:text="Submit"/>
+            <TextView
+                android:id="@+id/datePicker"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/editDatePen"
+                app:layout_constraintEnd_toStartOf="@id/editDatePen"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintBottom_toBottomOf="@id/editDatePen"/>
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/slushButton"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_marginBottom="10dp"
-            app:layout_constraintTop_toBottomOf="@id/submitButton"
-            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
-            app:layout_constraintStart_toStartOf="@id/guidelineStart"
-            android:text="Slush-Eis"/>
-        
-        <androidx.constraintlayout.widget.Group
-            android:id="@+id/dataGroup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:constraint_referenced_ids="startLocation,endLocation,datePicker,editDatePen,slushButton,submitButton"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/editDatePen"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ic_edit_pen"
+                app:layout_constraintTop_toBottomOf="@id/endLocation"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintBottom_toTopOf="@id/submitButton"/>
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/progressJie"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:indeterminate="true"
-            android:src="@drawable/jie"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
-            app:layout_constraintStart_toStartOf="@id/guidelineStart"
-            app:layout_constraintTop_toTopOf="parent"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/submitButton"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="40dp"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/editDatePen"
+                app:layout_constraintBottom_toTopOf="@id/slushButton"
+                android:text="Submit"/>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/slushButton"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintTop_toBottomOf="@id/submitButton"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                android:text="Slush-Eis"/>
 
-</ScrollView>
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/dataGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="startLocation,endLocation,datePicker,editDatePen,slushButton,submitButton"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/progressJie"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:src="@drawable/jie"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</layout>
